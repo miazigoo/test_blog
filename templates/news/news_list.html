@@ -1,0 +1,59 @@
+  {% extends "base.html" %}
+  {% load static %}
+  {% block contant %}
+  <div class="first-blog">
+  <div class="first-card col s10 m6 offset-2">
+    <div class="card horizontal">
+
+            <h6 class="new">NEW </h6>
+            <img src="{% static 'img/Vector (5).png' %}" alt="" class="like">
+            <span class="nmb-like">26</span>
+            <img src="{% static 'img/Vector (6).png' %}" alt="" class="massage">
+            <span class="nmb-mass">13</span>
+            <img src="{% static 'img/glaz.png' %}" alt="" class="glaz">
+            <span class="nmb-glaz">13</span>
+
+      <div class="card-stacked">
+        <div class="card-content">
+          <h2 class="header">{{ post_news.title }}</h2>
+          <p>{{ post_news.text|striptags|truncatechars:500 }}</p>
+        </div>
+        <div class="card-action">
+    	  <a href="#!" class="btn-large waves-effect waves-mycolor read">Читать</a>
+        </div>
+      </div>
+      <div class="card-image">
+        <img src="{{ post_news.img.url }}" class="first-blog-img">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div class="container">
+    <div class="row">
+      {% for post in posts %}
+      <div class="col s3">
+        <div class="card hoverable small">
+          <div class="card-image">
+            <img src="{{ post.img.url }}" alt="">
+            <span class="card-title">
+              {{post.title}}
+            </span>
+          </div>
+          <div class="card-content">
+            <p>{{post.text|striptags|truncatechars:100}}</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Link blog</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>  
+  </div>  
+
+      
+  {% endblock contant %}

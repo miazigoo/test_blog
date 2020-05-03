@@ -1,0 +1,38 @@
+{% load static %}
+<div class="navbar-fixed">
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">
+      <div class="blog-ml">
+        <img src="{% static 'Logo.png' %}" class="logo-img"><span class="nav-blog">Блог</span>
+      </div>
+    </a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse">
+      <i class="material-icons">menu</i>
+    </a>
+    <ul class="right hide-on-med-and-down">
+      <li>
+        <a href="#">
+          <img src="{% static 'img/3.png' %}" alt="" class="img-mass">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="{% static 'img/Uchenik.png' %}" alt="" class="img-pers">
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="{% static 'img/4.png' %}" alt="" class="out">
+        </a>
+      </li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a class="modal-trigger" href="#modal">Support</a></li>
+      <li><a href="#">Product</a></li>
+    </ul>
+  </div>
+</nav>
+</div>

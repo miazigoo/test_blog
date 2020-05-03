@@ -1,0 +1,4 @@
+media/
+.git
+*.pyc
+db.sqlite3

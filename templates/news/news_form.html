@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+
+{% block contant %}
+<div class="container">
+<div class="row">
+	<div class="form-section">
+		<h2 class="form-text-title">Добавление новвой статьи</h2>
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="form-group col s12">
+	    		<label for="exampleFormControlSelect1">{{ form.title.label_tag}}</label>
+	    		{{ form.title }}
+    		</div>
+    		<div class="form-group col s9">
+	    		<label for="exampleFormControlSelect1">{{ form.text.label_tag}}</label>
+	    		{{ form.text }}
+    		</div>
+
+    		<div class="col s3">
+		      <div class="card form-img">
+		        <div class="card-image card-img-form">
+		          <img src="{{ form.img.url }}">
+		          <label class="card-title" for="exampleFormControlSelect1">
+		            {{ form.img.label_tag}}
+		      	  </label>
+		          {{ form.img }}
+		        </div>
+		      </div>
+		    </div>
+
+            
+            <button type="submit" class="btn btn-outline-warning">
+            Добавить статью</button>
+        </form>
+    </div>
+</div>
+</div>    
+{% endblock contant %}
